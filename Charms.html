@@ -1,0 +1,1028 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Hollow Knight — Charms</title>
+        <link rel="stylesheet" href="charms.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <canvas id="hk-canvas"> </canvas>
+        <header>
+            <nav>
+                <div class="nav-left">
+                    <a href="Index.html">
+                        <div class="navbar n1">Home</div>
+                    </a>
+                    <a href="Lore.html">
+                        <div class="navbar n2">Lore</div>
+                    </a>
+                    <a href="Item.html">
+                        <div class="navbar n3">Items</div>
+                    </a>
+                    <a href="Charms.html">
+                        <div class="navbar n4 active">Charms</div>
+                    </a>
+                </div>
+                <div class="nav-right" id="nav-right"></div>
+            </nav>
+        </header>
+
+        <div class="modal-overlay" id="modal-overlay">
+            <div class="modal">
+                <button class="modal-close" id="modal-close">&#x2715;</button>
+                <div class="modal-panel" id="panel-login">
+                    <div class="modal-icon">&#9670;</div>
+                    <h2 class="modal-title">Welcome Back</h2>
+                    <p class="modal-sub">Sign in to your Hallownest account</p>
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input
+                            type="text"
+                            id="login-username"
+                            placeholder="Enter your username"
+                            autocomplete="off"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input
+                            type="password"
+                            id="login-password"
+                            placeholder="Enter your password"
+                        />
+                    </div>
+                    <div class="form-error" id="login-error"></div>
+                    <button class="btn-primary" id="btn-login">Sign In</button>
+                    <p class="modal-switch">
+                        No account?
+                        <span class="switch-link" id="go-register"
+                            >Create one</span
+                        >
+                    </p>
+                </div>
+                <div class="modal-panel hidden" id="panel-register">
+                    <div class="modal-icon">&#9670;</div>
+                    <h2 class="modal-title">Join Hallownest</h2>
+                    <p class="modal-sub">Create your account</p>
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input
+                            type="text"
+                            id="reg-username"
+                            placeholder="Choose a username"
+                            autocomplete="off"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input
+                            type="email"
+                            id="reg-email"
+                            placeholder="Your email address"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input
+                            type="password"
+                            id="reg-password"
+                            placeholder="Create a password"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label>Confirm Password</label>
+                        <input
+                            type="password"
+                            id="reg-confirm"
+                            placeholder="Repeat your password"
+                        />
+                    </div>
+                    <div class="form-error" id="reg-error"></div>
+                    <div class="form-success" id="reg-success"></div>
+                    <button class="btn-primary" id="btn-register">
+                        Create Account
+                    </button>
+                    <p class="modal-switch">
+                        Already have one?
+                        <span class="switch-link" id="go-login">Sign in</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="page">
+            <div class="page-title-wrap">
+                <h1 class="page-title">Charms of Hallownest</h1>
+                <p class="page-subtitle">
+                    45 Ancient Trinkets · Equip · Combine · Overcome
+                </p>
+            </div>
+            <div class="tabs-wrap">
+                <button class="tab-btn active" data-filter="all">All</button>
+                <button class="tab-btn" data-filter="combat">Combat</button>
+                <button class="tab-btn" data-filter="movement">Movement</button>
+                <button class="tab-btn" data-filter="soul">
+                    Soul &amp; Healing
+                </button>
+                <button class="tab-btn" data-filter="utility">Utility</button>
+            </div>
+            <!-- COMBAT -->
+            <div class="section-divider" data-category="combat">
+                <div class="divider-line"></div>
+                <div class="divider-title">Combat Charms</div>
+                <div class="divider-line"></div>
+            </div>
+            <div class="charms-grid" data-group="combat">
+                <div
+                    class="charm-card"
+                    data-category="combat"
+                    data-cost="3"
+                    style="--rarity-color: #e06060; --tag-color: #c04040"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            src="Charms/Fragile_strength.jpeg"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top-row">
+                            <div class="card-tag" style="color: #c04040">
+                                Combat · Damage
+                            </div>
+                            <div class="notch-badge">
+                                <div class="notch-badge-dots">
+                                    <div class="nb-dot"></div>
+                                    <div class="nb-dot"></div>
+                                    <div class="nb-dot"></div>
+                                </div>
+                                <div class="notch-badge-num">3</div>
+                            </div>
+                        </div>
+                        <div class="card-name">
+                            Fragile / Unbreakable Strength
+                        </div>
+                        <p class="card-desc">
+                            Increases nail damage by <strong>50%</strong>. The
+                            Fragile version <em>breaks permanently</em> on
+                            death. Divine can forge it
+                            <strong>Unbreakable</strong> for 15,000 Geo.
+                        </p>
+                        <div class="card-footer">
+                            <div class="stat-pill">Notches <span>3</span></div>
+                            <div class="stat-pill">
+                                Effect <span>+50% Nail DMG</span>
+                            </div>
+                            <div class="stat-pill">
+                                Location <span>Leg Eater, Fungal Wastes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="charm-card"
+                    data-category="combat"
+                    data-cost="3"
+                    style="--rarity-color: #e06060; --tag-color: #c04040"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 150px"
+                            src="Charms/Quick_Slash.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top-row">
+                            <div class="card-tag" style="color: #c04040">
+                                Combat · Attack Speed
+                            </div>
+                            <div class="notch-badge">
+                                <div class="notch-badge-dots">
+                                    <div class="nb-dot"></div>
+                                    <div class="nb-dot"></div>
+                                    <div class="nb-dot"></div>
+                                </div>
+                                <div class="notch-badge-num">3</div>
+                            </div>
+                        </div>
+                        <div class="card-name">Quick Slash</div>
+                        <p class="card-desc">
+                            Dramatically increases the
+                            <strong>attack speed</strong> of the nail. Found
+                            deep in the <em>Kingdom's Edge</em>.
+                        </p>
+                        <div class="card-footer">
+                            <div class="stat-pill">Notches <span>3</span></div>
+                            <div class="stat-pill">
+                                Effect <span>Faster Nail Attack</span>
+                            </div>
+                            <div class="stat-pill">
+                                Location <span>Kingdom's Edge</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="charm-card"
+                    data-category="combat"
+                    data-cost="3"
+                    style="--rarity-color: #e06060; --tag-color: #c04040"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 180px"
+                            src="Charms/perfect_Mark_of_Pride.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top-row">
+                            <div class="card-tag" style="color: #c04040">
+                                Combat · Range
+                            </div>
+                            <div class="notch-badge">
+                                <div class="notch-badge-dots">
+                                    <div class="nb-dot"></div>
+                                    <div class="nb-dot"></div>
+                                    <div class="nb-dot"></div>
+                                </div>
+                                <div class="notch-badge-num">3</div>
+                            </div>
+                        </div>
+                        <div class="card-name">Mark of Pride</div>
+                        <p class="card-desc">
+                            Increases nail range by <strong>25%</strong>.
+                            Dropped by the <strong>Mantis Lords</strong>.
+                        </p>
+                        <div class="card-footer">
+                            <div class="stat-pill">Notches <span>3</span></div>
+                            <div class="stat-pill">
+                                Effect <span>+25% Nail Range</span>
+                            </div>
+                            <div class="stat-pill">
+                                Location <span>Mantis Lords drop</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="charm-card"
+                    data-category="combat"
+                    data-cost="2"
+                    style="--rarity-color: #e06060; --tag-color: #c04040"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 180px"
+                            src="Charms/Longnail.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top-row">
+                            <div class="card-tag" style="color: #c04040">
+                                Combat · Range
+                            </div>
+                            <div class="notch-badge">
+                                <div class="notch-badge-dots">
+                                    <div class="nb-dot"></div>
+                                    <div class="nb-dot"></div>
+                                </div>
+                                <div class="notch-badge-num">2</div>
+                            </div>
+                        </div>
+                        <div class="card-name">Long Nail</div>
+                        <p class="card-desc">
+                            Increases the reach of the nail by
+                            <strong>15%</strong>. Sold by
+                            <strong>Salubra</strong> in Forgotten Crossroads.
+                        </p>
+                        <div class="card-footer">
+                            <div class="stat-pill">Notches <span>2</span></div>
+                            <div class="stat-pill">
+                                Effect <span>+15% Nail Range</span>
+                            </div>
+                            <div class="stat-pill">
+                                Cost <span>300 Geo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="charm-card"
+                    data-category="combat"
+                    data-cost="2"
+                    style="--rarity-color: #e06060; --tag-color: #c04040"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 150px"
+                            src="Charms/Stalwart_Shell.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top-row">
+                            <div class="card-tag" style="color: #c04040">
+                                Combat · Defence
+                            </div>
+                            <div class="notch-badge">
+                                <div class="notch-badge-dots">
+                                    <div class="nb-dot"></div>
+                                    <div class="nb-dot"></div>
+                                </div>
+                                <div class="notch-badge-num">2</div>
+                            </div>
+                        </div>
+                        <div class="card-name">Stalwart Shell</div>
+                        <p class="card-desc">
+                            Extends <strong>invincibility frames</strong> after
+                            taking damage by 40%. Sold by
+                            <strong>Salubra</strong> for 200 Geo.
+                        </p>
+                        <div class="card-footer">
+                            <div class="stat-pill">Notches <span>2</span></div>
+                            <div class="stat-pill">
+                                Effect <span>+40% I-frames</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="charm-card"
+                    data-category="combat"
+                    data-cost="2"
+                    style="--rarity-color: #e06060; --tag-color: #c04040"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 180px"
+                            src="Charms/Fury.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top-row">
+                            <div class="card-tag" style="color: #c04040">
+                                Combat · Last Stand
+                            </div>
+                            <div class="notch-badge">
+                                <div class="notch-badge-dots">
+                                    <div class="nb-dot"></div>
+                                    <div class="nb-dot"></div>
+                                </div>
+                                <div class="notch-badge-num">2</div>
+                            </div>
+                        </div>
+                        <div class="card-name">Fury of the Fallen</div>
+                        <p class="card-desc">
+                            When at <strong>one Mask</strong>, deals
+                            <strong>75% increased damage</strong>. Found in
+                            <em>King's Pass</em>.
+                        </p>
+                        <div class="card-footer">
+                            <div class="stat-pill">Notches <span>2</span></div>
+                            <div class="stat-pill">
+                                Effect <span>+75% DMG at 1 Mask</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="charm-card"
+                    data-category="combat"
+                    data-cost="1"
+                    style="--rarity-color: #e06060; --tag-color: #c04040"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 180px"
+                            src="Charms/Thorns_of_Agony.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top-row">
+                            <div class="card-tag" style="color: #c04040">
+                                Combat · Retaliation
+                            </div>
+                            <div class="notch-badge">
+                                <div class="notch-badge-dots">
+                                    <div class="nb-dot"></div>
+                                </div>
+                                <div class="notch-badge-num">1</div>
+                            </div>
+                        </div>
+                        <div class="card-name">Thorns of Agony</div>
+                        <p class="card-desc">
+                            When damaged, <strong>thorns</strong> burst outward
+                            hitting nearby enemies. Found in <em>Greenpath</em>.
+                        </p>
+                        <div class="card-footer">
+                            <div class="stat-pill">Notches <span>1</span></div>
+                            <div class="stat-pill">
+                                Location <span>Greenpath</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="charm-card"
+                    data-category="combat"
+                    data-cost="1"
+                    style="--rarity-color: #e06060; --tag-color: #c04040"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 180px"
+                            src="Charms/Grubsong.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top-row">
+                            <div class="card-tag" style="color: #c04040">
+                                Combat · Soul on Hit
+                            </div>
+                            <div class="notch-badge">
+                                <div class="notch-badge-dots">
+                                    <div class="nb-dot"></div>
+                                </div>
+                                <div class="notch-badge-num">1</div>
+                            </div>
+                        </div>
+                        <div class="card-name">Grubsong</div>
+                        <p class="card-desc">
+                            Grants <strong>Soul</strong> whenever the Knight
+                            takes damage. Rewarded by
+                            <strong>Grubfather</strong> after 10 Grubs.
+                        </p>
+                        <div class="card-footer">
+                            <div class="stat-pill">Notches <span>1</span></div>
+                            <div class="stat-pill">
+                                Effect <span>Soul on Damage</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-divider" data-category="soul">
+                <div class="divider-line"></div>
+                <div class="divider-title">Soul &amp; Healing Charms</div>
+                <div class="divider-line"></div>
+            </div>
+            <div class="charms-grid" data-group="soul">
+                <div
+                    class="charm-card"
+                    data-category="soul"
+                    data-cost="2"
+                    style="--rarity-color: #f0a060; --tag-color: #d07030"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 150px"
+                            src="Charms/Fragile_Heart.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top-row">
+                            <div class="card-tag" style="color: #d07030">
+                                Soul · Health
+                            </div>
+                            <div class="notch-badge">
+                                <div class="notch-badge-dots">
+                                    <div class="nb-dot"></div>
+                                    <div class="nb-dot"></div>
+                                </div>
+                                <div class="notch-badge-num">2</div>
+                            </div>
+                        </div>
+                        <div class="card-name">Fragile / Unbreakable Heart</div>
+                        <p class="card-desc">
+                            Adds <strong>+1 Mask</strong> HP. Forge to
+                            Unbreakable for 12,000 Geo via
+                            <strong>Divine</strong>.
+                        </p>
+                        <div class="card-footer">
+                            <div class="stat-pill">Notches <span>2</span></div>
+                            <div class="stat-pill">
+                                Location <span>Leg Eater</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="charm-card"
+                    data-category="soul"
+                    data-cost="3"
+                    style="--rarity-color: #f0a060; --tag-color: #d07030"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 150px"
+                            src="Charms/perfect_Quick_focus.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top-row">
+                            <div class="card-tag" style="color: #d07030">
+                                Soul · Healing Speed
+                            </div>
+                            <div class="notch-badge">
+                                <div class="notch-badge-dots">
+                                    <div class="nb-dot"></div>
+                                    <div class="nb-dot"></div>
+                                    <div class="nb-dot"></div>
+                                </div>
+                                <div class="notch-badge-num">3</div>
+                            </div>
+                        </div>
+                        <div class="card-name">Quick Focus</div>
+                        <p class="card-desc">
+                            Halves the time to <strong>Focus</strong> (heal).
+                            Sold by <strong>Salubra</strong> for 800 Geo.
+                        </p>
+                        <div class="card-footer">
+                            <div class="stat-pill">Notches <span>3</span></div>
+                            <div class="stat-pill">
+                                Effect <span>2× Faster Focus</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="charm-card"
+                    data-category="soul"
+                    data-cost="2"
+                    style="--rarity-color: #f0a060; --tag-color: #d07030"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 150px"
+                            src="Charms/Soul_Catcher.jpg"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top-row">
+                            <div class="card-tag" style="color: #d07030">
+                                Soul · Generation
+                            </div>
+                            <div class="notch-badge">
+                                <div class="notch-badge-dots">
+                                    <div class="nb-dot"></div>
+                                    <div class="nb-dot"></div>
+                                </div>
+                                <div class="notch-badge-num">2</div>
+                            </div>
+                        </div>
+                        <div class="card-name">Soul Catcher</div>
+                        <p class="card-desc">
+                            Increases <strong>Soul</strong> gathered per nail
+                            strike. Found in <em>Ancestral Mound</em>.
+                        </p>
+                        <div class="card-footer">
+                            <div class="stat-pill">Notches <span>2</span></div>
+                            <div class="stat-pill">
+                                Effect <span>+3 Soul per hit</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="charm-card"
+                    data-category="soul"
+                    data-cost="4"
+                    style="--rarity-color: #f0a060; --tag-color: #d07030"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 150px"
+                            src="Charms/Joni's_Blessing.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top-row">
+                            <div class="card-tag" style="color: #d07030">
+                                Soul · Special HP
+                            </div>
+                            <div class="notch-badge">
+                                <div class="notch-badge-dots">
+                                    <div class="nb-dot"></div>
+                                    <div class="nb-dot"></div>
+                                    <div class="nb-dot"></div>
+                                    <div class="nb-dot"></div>
+                                </div>
+                                <div class="notch-badge-num">4</div>
+                            </div>
+                        </div>
+                        <div class="card-name">Joni's Blessing</div>
+                        <p class="card-desc">
+                            Converts one Mask into
+                            <strong>1.4× blue Masks</strong> — unrefilable by
+                            Focus. Found in <em>Howling Cliffs</em>.
+                        </p>
+                        <div class="card-footer">
+                            <div class="stat-pill">Notches <span>4</span></div>
+                            <div class="stat-pill">
+                                Effect <span>Blue Masks</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="charm-card"
+                    data-category="soul"
+                    data-cost="4"
+                    style="--rarity-color: #f0a060; --tag-color: #d07030"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 150px"
+                            src="Charms/Hiveblood.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top-row">
+                            <div class="card-tag" style="color: #d07030">
+                                Soul · Regeneration
+                            </div>
+                            <div class="notch-badge">
+                                <div class="notch-badge-dots">
+                                    <div class="nb-dot"></div>
+                                    <div class="nb-dot"></div>
+                                    <div class="nb-dot"></div>
+                                    <div class="nb-dot"></div>
+                                </div>
+                                <div class="notch-badge-num">4</div>
+                            </div>
+                        </div>
+                        <div class="card-name">Hiveblood</div>
+                        <p class="card-desc">
+                            Lost Mask <strong>regenerates over time</strong> if
+                            no further damage is taken. Found in
+                            <em>The Hive</em>.
+                        </p>
+                        <div class="card-footer">
+                            <div class="stat-pill">Notches <span>4</span></div>
+                            <div class="stat-pill">
+                                Effect <span>Auto-Regen 1 Mask</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="lore-callout" data-category="soul">
+                <div class="lore-callout-inner">
+                    <strong
+                        >"Soul flows through all things in Hallownest — gathered
+                        in battle, spent in healing, shaped by will."</strong
+                    >
+                    The Soul mechanic blurs the line between offence and
+                    survival.
+                </div>
+            </div>
+            <!-- MOVEMENT -->
+            <div class="section-divider" data-category="movement">
+                <div class="divider-line"></div>
+                <div class="divider-title">Movement Charms</div>
+                <div class="divider-line"></div>
+            </div>
+            <div class="charms-grid" data-group="movement">
+                <div
+                    class="charm-card"
+                    data-category="movement"
+                    data-cost="2"
+                    style="--rarity-color: #60d0a0; --tag-color: #30a870"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 150px"
+                            src="Charms/Dashmaster.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top-row">
+                            <div class="card-tag" style="color: #30a870">
+                                Movement · Dash
+                            </div>
+                            <div class="notch-badge">
+                                <div class="notch-badge-dots">
+                                    <div class="nb-dot"></div>
+                                    <div class="nb-dot"></div>
+                                </div>
+                                <div class="notch-badge-num">2</div>
+                            </div>
+                        </div>
+                        <div class="card-name">Dashmaster</div>
+                        <p class="card-desc">
+                            Extra dashes + allows dashing <em>downward</em>.
+                            Found in <strong>Fungal Wastes</strong>.
+                        </p>
+                        <div class="card-footer">
+                            <div class="stat-pill">Notches <span>2</span></div>
+                            <div class="stat-pill">
+                                Effect <span>Extra Dash + Down Dash</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="charm-card"
+                    data-category="movement"
+                    data-cost="1"
+                    style="--rarity-color: #60d0a0; --tag-color: #30a870"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 150px"
+                            src="Charms/Sprintmaster.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top-row">
+                            <div class="card-tag" style="color: #30a870">
+                                Movement · Speed
+                            </div>
+                            <div class="notch-badge">
+                                <div class="notch-badge-dots">
+                                    <div class="nb-dot"></div>
+                                </div>
+                                <div class="notch-badge-num">1</div>
+                            </div>
+                        </div>
+                        <div class="card-name">Sprintmaster</div>
+                        <p class="card-desc">
+                            Increases the Knight's movement speed. Sold by
+                            <strong>Sly</strong> in Dirtmouth for 400 Geo.
+                        </p>
+                        <div class="card-footer">
+                            <div class="stat-pill">Notches <span>1</span></div>
+                            <div class="stat-pill">
+                                Effect <span>+20% Move Speed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="charm-card"
+                    data-category="movement"
+                    data-cost="1"
+                    style="--rarity-color: #60d0a0; --tag-color: #30a870"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 150px"
+                            src="Charms/Steady_Body.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top-row">
+                            <div class="card-tag" style="color: #30a870">
+                                Movement · Stability
+                            </div>
+                            <div class="notch-badge">
+                                <div class="notch-badge-dots">
+                                    <div class="nb-dot"></div>
+                                </div>
+                                <div class="notch-badge-num">1</div>
+                            </div>
+                        </div>
+                        <div class="card-name">Steady Body</div>
+                        <p class="card-desc">
+                            Removes <strong>recoil knockback</strong> from nail
+                            strikes entirely. Sold by <strong>Salubra</strong>.
+                        </p>
+                        <div class="card-footer">
+                            <div class="stat-pill">Notches <span>1</span></div>
+                            <div class="stat-pill">
+                                Effect <span>No Attack Recoil</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="charm-card"
+                    data-category="movement"
+                    data-cost="1"
+                    style="--rarity-color: #60d0a0; --tag-color: #30a870"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 150px"
+                            src="Charms/Dream_Wielder.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top-row">
+                            <div class="card-tag" style="color: #30a870">
+                                Movement · Dream Nail
+                            </div>
+                            <div class="notch-badge">
+                                <div class="notch-badge-dots">
+                                    <div class="nb-dot"></div>
+                                </div>
+                                <div class="notch-badge-num">1</div>
+                            </div>
+                        </div>
+                        <div class="card-name">Dream Wielder</div>
+                        <p class="card-desc">
+                            More <strong>Soul</strong> from Dream Nail + faster
+                            charge. Rewarded by <em>Seer</em> at 500 Essence.
+                        </p>
+                        <div class="card-footer">
+                            <div class="stat-pill">Notches <span>1</span></div>
+                            <div class="stat-pill">
+                                Location <span>Seer (500 Essence)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-divider" data-category="utility">
+                <div class="divider-line"></div>
+                <div class="divider-title">
+                    Utility &amp; Exploration Charms
+                </div>
+                <div class="divider-line"></div>
+            </div>
+            <div class="charms-grid" data-group="utility">
+                <div
+                    class="charm-card"
+                    data-category="utility"
+                    data-cost="1"
+                    style="--rarity-color: #80b0ff; --tag-color: #5080d0"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 150px"
+                            src="Charms/Wayward_Compass.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top-row">
+                            <div class="card-tag" style="color: #5080d0">
+                                Utility · Navigation
+                            </div>
+                            <div class="notch-badge">
+                                <div class="notch-badge-dots">
+                                    <div class="nb-dot"></div>
+                                </div>
+                                <div class="notch-badge-num">1</div>
+                            </div>
+                        </div>
+                        <div class="card-name">Wayward Compass</div>
+                        <p class="card-desc">
+                            Shows the Knight's
+                            <strong>position on the map</strong>. Sold by
+                            <strong>Iselda</strong> in Dirtmouth for 220 Geo.
+                        </p>
+                        <div class="card-footer">
+                            <div class="stat-pill">Notches <span>1</span></div>
+                            <div class="stat-pill">
+                                Cost <span>220 Geo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="charm-card"
+                    data-category="utility"
+                    data-cost="1"
+                    style="--rarity-color: #80b0ff; --tag-color: #5080d0"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 150px"
+                            src="Charms/Gathering_Swarm.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top-row">
+                            <div class="card-tag" style="color: #5080d0">
+                                Utility · Geo
+                            </div>
+                            <div class="notch-badge">
+                                <div class="notch-badge-dots">
+                                    <div class="nb-dot"></div>
+                                </div>
+                                <div class="notch-badge-num">1</div>
+                            </div>
+                        </div>
+                        <div class="card-name">Gathering Swarm</div>
+                        <p class="card-desc">
+                            Summons vessels that
+                            <strong>collect Geo automatically</strong>. Sold by
+                            <strong>Sly</strong> for 300 Geo.
+                        </p>
+                        <div class="card-footer">
+                            <div class="stat-pill">Notches <span>1</span></div>
+                            <div class="stat-pill">
+                                Effect <span>Auto-Collect Geo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="charm-card"
+                    data-category="utility"
+                    data-cost="3"
+                    style="--rarity-color: #80b0ff; --tag-color: #5080d0"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 150px"
+                            src="Charms/Grubberfly's_Elegy.jpg"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top-row">
+                            <div class="card-tag" style="color: #5080d0">
+                                Utility · Ranged
+                            </div>
+                            <div class="notch-badge">
+                                <div class="notch-badge-dots">
+                                    <div class="nb-dot"></div>
+                                    <div class="nb-dot"></div>
+                                    <div class="nb-dot"></div>
+                                </div>
+                                <div class="notch-badge-num">3</div>
+                            </div>
+                        </div>
+                        <div class="card-name">Grubberfly's Elegy</div>
+                        <p class="card-desc">
+                            At <strong>full health</strong>, nail strikes fire a
+                            projectile beam. Reward for rescuing all 46 Grubs.
+                        </p>
+                        <div class="card-footer">
+                            <div class="stat-pill">Notches <span>3</span></div>
+                            <div class="stat-pill">
+                                Effect <span>Nail Beam at Full HP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="charm-card"
+                    data-category="utility"
+                    data-cost="3"
+                    style="--rarity-color: #80b0ff; --tag-color: #5080d0"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 150px"
+                            src="Charms/Fragile_Greed.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card -body">
+                        <div class="card-top-row">
+                            <div class="card-tag" style="color: #5080d0">
+                                Utility · Geo Farm
+                            </div>
+                            <div class="notch-badge">
+                                <div class="notch-badge-dots">
+                                    <div class="nb-dot"></div>
+                                    <div class="nb-dot"></div>
+                                    <div class="nb-dot"></div>
+                                </div>
+                                <div class="notch-badge-num">3</div>
+                            </div>
+                        </div>
+                        <div class="card-name">Fragile / Unbreakable Greed</div>
+                        <p class="card-desc">
+                            Enemies drop <strong>20% more Geo</strong>. Sold by
+                            <em>Leg Eater</em>. Forge Unbreakable for 9,000 Geo.
+                        </p>
+                        <div class="card-footer">
+                            <div class="stat-pill">Notches <span>3</span></div>
+                            <div class="stat-pill">
+                                Effect <span>+20% Geo Drops</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-end"></div>
+        </div>
+        <script src="charms.js"></script>
+        <script src="login.js"></script>
+    </body>
+</html>

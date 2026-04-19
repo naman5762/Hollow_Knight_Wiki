@@ -1,0 +1,659 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #080d18;
+    color: #d0cde8;
+    font-family: "Crimson Text", Georgia, serif;
+    font-size: 18px;
+    overflow-x: hidden;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    background-color: #050a12;
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 1px solid #1e2a40;
+    align-items: center;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-right {
+    display: flex;
+    gap: 12px;
+    margin-left: auto;
+    align-items: center;
+    padding-right: 16px;
+}
+
+.nav-btn {
+    font-family: "Cinzel", serif;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.nav-btn.outline {
+    background: transparent;
+    color: #8fa8ff;
+    border: 1px solid #3a4a80;
+}
+
+.nav-btn.outline:hover {
+    background: rgba(60, 90, 160, 0.2);
+}
+
+.nav-btn.solid {
+    background: rgba(40, 70, 140, 0.6);
+    color: #c8d8ff;
+    border: 1px solid #4060c0;
+}
+
+.nav-btn.solid:hover {
+    background: rgba(60, 100, 200, 0.8);
+}
+
+.nav-user {
+    font-family: "Cinzel", serif;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: #8fa8ff;
+    padding: 0 4px;
+}
+
+.navbar {
+    color: #aab;
+    width: 110px;
+    height: 44px;
+    font-size: 15px;
+    font-family: "Cinzel", serif;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:
+        background 0.2s,
+        color 0.2s;
+    cursor: pointer;
+}
+
+.n1 {
+    background: #0a1018;
+}
+.n2 {
+    background: #0c1420;
+}
+.n3 {
+    background: #0a1018;
+}
+.n4 {
+    background: #0c1420;
+}
+.n5 {
+    background: #0c1420;
+}
+
+.navbar:hover {
+    background: #1c2840;
+    color: #ffffff;
+}
+
+.navbar.active {
+    background: #1e2d4a;
+    color: #ffffff;
+    border-bottom: 2px solid #4a72c4;
+    box-shadow: inset 0 -1px 0 #4a72c4;
+}
+
+.page {
+    display: none;
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 0.6s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px 10px;
+}
+
+.title-img {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 10px;
+    box-shadow: 0 0 60px rgba(100, 140, 255, 0.2);
+    transition: box-shadow 0.3s;
+}
+
+.title-img:hover {
+    box-shadow: 0 0 90px rgba(120, 160, 255, 0.35);
+}
+
+.lore-brief {
+    max-width: 820px;
+    margin: 40px auto;
+    padding: 30px 36px;
+    background: rgba(10, 15, 30, 0.85);
+    border: 1px solid #1e2e50;
+    border-radius: 10px;
+    line-height: 1.8;
+    backdrop-filter: blur(4px);
+}
+
+.lore-brief p {
+    margin-bottom: 16px;
+}
+.lore-brief p:last-child {
+    margin-bottom: 0;
+}
+.lore-brief strong {
+    color: #b8ccff;
+}
+.lore-brief em {
+    color: #98b8e0;
+    font-style: italic;
+}
+
+.section-heading {
+    font-family: "Cinzel", serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #c0d0ff;
+    letter-spacing: 0.06em;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.map-section {
+    max-width: 980px;
+    margin: 10px auto 40px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.map-wrapper {
+    position: relative;
+    display: inline-block;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #1e2e50;
+    box-shadow: 0 0 40px rgba(60, 100, 200, 0.2);
+    transition: box-shadow 0.4s;
+    cursor: zoom-in;
+}
+
+.map-wrapper:hover {
+    box-shadow: 0 0 70px rgba(80, 130, 255, 0.35);
+}
+
+.map-img {
+    width: 100%;
+    max-width: 900px;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.map-wrapper:hover .map-img {
+    transform: scale(1.03);
+}
+
+.map-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(5, 10, 25, 0.85));
+    padding: 30px 20px 14px;
+    color: #7090c0;
+    font-family: "Cinzel", serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.map-wrapper:hover .map-overlay {
+    opacity: 1;
+}
+
+.arrow-section {
+    text-align: center;
+    padding: 10px 0 50px;
+}
+
+.arrow-label {
+    font-family: "Cinzel", serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.12em;
+    color: #6080b0;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.arrow-btn {
+    background: rgba(20, 30, 60, 0.8);
+    border: 2px solid #2a3d6a;
+    border-radius: 50%;
+    width: 58px;
+    height: 58px;
+    cursor: pointer;
+    transition:
+        background 0.25s,
+        border-color 0.25s,
+        transform 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow-btn:hover {
+    background: rgba(40, 70, 130, 0.9);
+    border-color: #6090d0;
+    transform: translateY(4px);
+}
+
+.arrow-icon {
+    font-size: 1.6rem;
+    color: #90b8f0;
+    animation: bounce 1.6s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(6px);
+    }
+}
+
+.back-btn-wrap {
+    padding: 18px 30px 0;
+}
+
+.back-btn {
+    background: transparent;
+    border: 1px solid #2a3d6a;
+    color: #7090c0;
+    font-family: "Cinzel", serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    padding: 8px 18px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition:
+        background 0.2s,
+        color 0.2s;
+}
+
+.back-btn:hover {
+    background: #1a2640;
+    color: #b0c8f0;
+}
+
+.tc-content {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 20px 20px 60px;
+}
+
+.tc-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 36px;
+    padding: 24px 30px;
+    background: rgba(10, 15, 30, 0.8);
+    border: 1px solid #1e2e50;
+    border-radius: 10px;
+}
+
+.tc-logo {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    filter: brightness(0.9);
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.tc-title {
+    font-family: "Cinzel", serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #c0d0ff;
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+}
+
+.tc-story {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.story-card {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    background: rgba(10, 15, 30, 0.8);
+    border: 1px solid #1a2840;
+    border-radius: 10px;
+    padding: 24px 28px;
+    transition:
+        border-color 0.25s,
+        transform 0.25s,
+        box-shadow 0.25s;
+    opacity: 0;
+    transform: translateY(24px);
+}
+
+.story-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease,
+        border-color 0.25s,
+        box-shadow 0.25s;
+}
+
+.story-card:hover {
+    border-color: #3050a0;
+    transform: translateX(6px);
+    box-shadow: -4px 0 20px rgba(60, 100, 200, 0.15);
+}
+
+.story-num {
+    font-family: "Cinzel", serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e3060;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 48px;
+    margin-top: 2px;
+}
+
+.story-text h3 {
+    font-family: "Cinzel", serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #9ab0e0;
+    margin-bottom: 8px;
+    letter-spacing: 0.04em;
+}
+
+.story-text p {
+    line-height: 1.75;
+    color: #b0b8d0;
+}
+
+.story-text strong {
+    color: #c0d0ff;
+}
+.story-text em {
+    color: #90a8d8;
+    font-style: italic;
+}
+
+.thank-you {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.divider {
+    width: 160px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #2a4070, transparent);
+    margin: 0 auto 28px;
+}
+
+.thank-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #8098c0;
+    max-width: 580px;
+    margin: 0 auto 20px;
+}
+
+.thank-text strong {
+    color: #b0c8f0;
+}
+
+.tc-logo-sm {
+    width: 54px;
+    height: 54px;
+    object-fit: contain;
+    opacity: 0.6;
+    filter: brightness(0.85);
+}
+
+:root {
+    --border:   #1e2e50;
+    --border2:  #2a3d6a;
+    --text:     #c0c8e0;
+    --text-dim: #7080a8;
+    --accent:   #8ab0f0;
+    --accent2:  #c0d0ff;
+    --void:     #4060c0;
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(4, 8, 18, 0.85);
+    backdrop-filter: blur(6px);
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal {
+    background: #090f20;
+    border: 1px solid var(--border2);
+    border-radius: 12px;
+    padding: 40px 44px 36px;
+    width: 100%;
+    max-width: 420px;
+    position: relative;
+    box-shadow: 0 0 60px rgba(40, 80, 200, 0.18);
+    transform: translateY(24px);
+    transition: transform 0.35s ease;
+}
+
+.modal-overlay.open .modal {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    background: transparent;
+    border: none;
+    color: var(--text-dim);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: color 0.2s;
+    padding: 4px 6px;
+}
+
+.modal-close:hover {
+    color: var(--accent2);
+}
+
+.modal-icon {
+    text-align: center;
+    font-size: 1.6rem;
+    color: var(--void);
+    margin-bottom: 14px;
+    opacity: 0.7;
+}
+
+.modal-title {
+    font-family: "Cinzel", serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--accent2);
+    letter-spacing: 0.05em;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.modal-sub {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-family: "Cinzel", serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin-bottom: 7px;
+}
+
+.form-group input {
+    width: 100%;
+    background: rgba(10, 16, 34, 0.9);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 10px 14px;
+    color: var(--text);
+    font-family: "Crimson Text", Georgia, serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus {
+    border-color: var(--void);
+    box-shadow: 0 0 0 3px rgba(74, 114, 196, 0.15);
+}
+
+.form-group input::placeholder {
+    color: #3a4a68;
+}
+
+.form-error {
+    font-size: 0.88rem;
+    color: #e07070;
+    margin-bottom: 14px;
+    min-height: 20px;
+    text-align: center;
+}
+
+.form-success {
+    font-size: 0.88rem;
+    color: #70c090;
+    margin-bottom: 14px;
+    min-height: 20px;
+    text-align: center;
+}
+
+.btn-primary {
+    width: 100%;
+    background: rgba(30, 50, 110, 0.9);
+    border: 1px solid var(--void);
+    color: var(--accent2);
+    font-family: "Cinzel", serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.2s, box-shadow 0.2s;
+    text-transform: uppercase;
+}
+
+.btn-primary:hover {
+    background: rgba(50, 80, 160, 0.95);
+    box-shadow: 0 0 20px rgba(74, 114, 196, 0.3);
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+.modal-switch {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 0.9rem;
+    color: var(--text-dim);
+}
+
+.switch-link {
+    color: var(--accent);
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.switch-link:hover {
+    color: var(--accent2);
+    border-bottom-color: var(--accent);
+}
+
+.modal-panel { display: block; }
+.modal-panel.hidden { display: none; }

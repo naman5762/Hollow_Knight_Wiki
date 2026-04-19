@@ -1,0 +1,533 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #080d18;
+    color: #d0cde8;
+    font-family: "Crimson Text", Georgia, serif;
+    font-size: 23px;
+    overflow-x: hidden;
+}
+
+/* ── NAVBAR ───────────────────────────────── */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    background-color: #050a12;
+    border-bottom: 1px solid #1e2a40;
+    flex-wrap: wrap;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-left a {
+    display: inline-block;
+}
+
+.nav-right {
+    display: flex;
+    gap: 12px;
+    margin-left: auto;
+    align-items: center;
+    padding-right: 16px;
+}
+
+/* ── NAV BUTTONS ──────────────────────────── */
+.nav-btn {
+    font-family: "Cinzel", serif;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.nav-btn.outline {
+    background: transparent;
+    color: #8fa8ff;
+    border: 1px solid #3a4a80;
+}
+
+.nav-btn.outline:hover {
+    background: rgba(60, 90, 160, 0.2);
+}
+
+.nav-btn.solid {
+    background: rgba(40, 70, 140, 0.6);
+    color: #c8d8ff;
+    border: 1px solid #4060c0;
+}
+
+.nav-btn.solid:hover {
+    background: rgba(60, 100, 200, 0.8);
+}
+
+/* ── NAV USER (logged-in state) ───────────── */
+.nav-user {
+    font-family: "Cinzel", serif;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: #8fa8ff;
+    padding: 0 4px;
+}
+
+/* ── NAV ITEMS ────────────────────────────── */
+.navbar {
+    color: #aab;
+    width: 110px;
+    height: 44px;
+    font-size: 15px;
+    font-family: "Cinzel", serif;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+    background: transparent;
+    white-space: nowrap;
+}
+
+.navbar:hover {
+    background: rgba(40, 70, 130, 0.25);
+    color: #c8d8ff;
+}
+
+.navbar.active {
+    background: #1a2840;
+    color: #c8d8ff;
+    border-bottom: 2px solid #4060c0;
+}
+
+/* ── BODY CONTENT ─────────────────────────── */
+.bod {
+    font-size: 23px;
+    margin-top: 0px;
+    font-family: "Crimson Text", Georgia, serif;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    padding-top: 10px;
+    color: rgb(213, 213, 213);
+    text-align: center;
+    font-family: "Cinzel", serif;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+}
+
+.small_heading {
+    color: rgb(160, 155, 175);
+    margin-top: 20px;
+    padding-left: 12px;
+    margin-left: 40px;
+    font-family: "Cinzel", serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    border-left: 3px solid rgb(100, 90, 120);
+}
+
+/* ── SECTION (image + text row) ───────────── */
+.section {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 20px 40px 40px;
+    background: rgba(10, 15, 30, 0.85);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #1e2e50;
+    opacity: 0.9;
+    transition: transform 0.3s ease, opacity 0.3s ease, border-color 0.3s ease;
+}
+
+.section.reverse {
+    flex-direction: row-reverse;
+}
+
+.section:hover {
+    transform: scale(1.02);
+    opacity: 1;
+    border-color: rgb(140, 130, 160);
+}
+
+.image {
+    width: 400px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 3px solid rgb(120, 120, 120);
+    flex-shrink: 0;
+}
+
+.text {
+    color: rgb(211, 208, 208);
+    line-height: 1.75;
+    font-size: 1.2rem;
+}
+
+.text strong {
+    color: #e0d8f0;
+    font-weight: 600;
+}
+
+/* ── MODAL OVERLAY ────────────────────────── */
+:root {
+    --border:  #1e2e50;
+    --border2: #2a3d6a;
+    --text:    #c0c8e0;
+    --text-dim: #7080a8;
+    --accent:  #8ab0f0;
+    --accent2: #c0d0ff;
+    --void:    #4060c0;
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(4, 8, 18, 0.85);
+    backdrop-filter: blur(6px);
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal {
+    background: #090f20;
+    border: 1px solid var(--border2);
+    border-radius: 12px;
+    padding: 40px 44px 36px;
+    width: 100%;
+    max-width: 420px;
+    position: relative;
+    box-shadow: 0 0 60px rgba(40, 80, 200, 0.18);
+    transform: translateY(24px);
+    transition: transform 0.35s ease;
+}
+
+.modal-overlay.open .modal {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    background: transparent;
+    border: none;
+    color: var(--text-dim);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: color 0.2s;
+    padding: 4px 6px;
+}
+
+.modal-close:hover {
+    color: var(--accent2);
+}
+
+.modal-icon {
+    text-align: center;
+    font-size: 1.6rem;
+    color: var(--void);
+    margin-bottom: 14px;
+    opacity: 0.7;
+}
+
+.modal-title {
+    font-family: "Cinzel", serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--accent2);
+    letter-spacing: 0.05em;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.modal-sub {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-family: "Cinzel", serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin-bottom: 7px;
+}
+
+.form-group input {
+    width: 100%;
+    background: rgba(10, 16, 34, 0.9);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 10px 14px;
+    color: var(--text);
+    font-family: "Crimson Text", Georgia, serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus {
+    border-color: var(--void);
+    box-shadow: 0 0 0 3px rgba(74, 114, 196, 0.15);
+}
+
+.form-group input::placeholder {
+    color: #3a4a68;
+}
+
+.form-error {
+    font-size: 0.88rem;
+    color: #e07070;
+    margin-bottom: 14px;
+    min-height: 20px;
+    text-align: center;
+}
+
+.form-success {
+    font-size: 0.88rem;
+    color: #70c090;
+    margin-bottom: 14px;
+    min-height: 20px;
+    text-align: center;
+}
+
+.btn-primary {
+    width: 100%;
+    background: rgba(30, 50, 110, 0.9);
+    border: 1px solid var(--void);
+    color: var(--accent2);
+    font-family: "Cinzel", serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.2s, box-shadow 0.2s;
+    text-transform: uppercase;
+}
+
+.btn-primary:hover {
+    background: rgba(50, 80, 160, 0.95);
+    box-shadow: 0 0 20px rgba(74, 114, 196, 0.3);
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+.modal-switch {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 0.9rem;
+    color: var(--text-dim);
+}
+
+.switch-link {
+    color: var(--accent);
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.switch-link:hover {
+    color: var(--accent2);
+    border-bottom-color: var(--accent);
+}
+
+.modal-panel { display: block; }
+.modal-panel.hidden { display: none; }
+
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+   ═══════════════════════════════════════════ */
+
+/* ── Tablet (≤ 900px) ──────────────────────── */
+@media (max-width: 900px) {
+
+    .nav-right {
+        padding-right: 10px;
+        gap: 8px;
+    }
+
+    .nav-btn {
+        font-size: 11px;
+        padding: 6px 12px;
+    }
+
+    .nav-user {
+        font-size: 11px;
+    }
+
+    .navbar {
+        width: 80px;
+        height: 40px;
+        font-size: 12px;
+        letter-spacing: 0.04em;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+        padding: 16px 16px 4px;
+    }
+
+    .small_heading {
+        font-size: 1.1rem;
+        margin-left: 20px;
+    }
+
+    .section {
+        margin: 16px 20px 28px;
+        gap: 20px;
+    }
+
+    .image {
+        width: 260px;
+        height: 200px;
+    }
+
+    .text {
+        font-size: 1.05rem;
+    }
+}
+
+/* ── Mobile (≤ 640px) ──────────────────────── */
+@media (max-width: 640px) {
+
+    .navbar {
+        width: 25vw;
+        height: 38px;
+        font-size: 10px;
+        letter-spacing: 0.02em;
+    }
+
+    .nav-right {
+        width: 100%;
+        justify-content: center;
+        padding: 6px 0;
+        border-top: 1px solid #1e2a40;
+        gap: 10px;
+    }
+
+    body {
+        font-size: 17px;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+        padding: 14px 12px 4px;
+    }
+
+    .bod {
+        font-size: 17px;
+    }
+
+    .small_heading {
+        font-size: 1rem;
+        margin-left: 12px;
+        margin-top: 16px;
+    }
+
+    .section,
+    .section.reverse {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 12px 10px 20px;
+        padding: 16px;
+        gap: 14px;
+    }
+
+    .section:hover {
+        transform: none;
+    }
+
+    .image {
+        width: 100%;
+        height: auto;
+        max-height: 240px;
+        object-fit: cover;
+        flex-shrink: unset;
+        min-width: unset !important;
+    }
+
+    .text {
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    .modal {
+        max-width: 94vw;
+        padding: 28px 18px 24px;
+    }
+}
+
+/* ── Small phones (≤ 400px) ────────────────── */
+@media (max-width: 400px) {
+
+    .navbar {
+        font-size: 8.5px;
+        height: 36px;
+    }
+
+    h1 {
+        font-size: 1rem;
+    }
+
+    .small_heading {
+        font-size: 0.9rem;
+    }
+
+    .section {
+        margin: 10px 8px 16px;
+        padding: 12px;
+    }
+
+    .text {
+        font-size: 0.95rem;
+    }
+}

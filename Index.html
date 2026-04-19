@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Hollow Knight — Home</title>
+        <link rel="stylesheet" href="home.css" />
+        <link rel="stylesheet" href="login.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <nav>
+            <div class="nav-left">
+                <a href="Index.html"><div class="navbar n1 active">Home</div></a>
+                <a href="Lore.html"><div class="navbar n2">Lore</div></a>
+                <a href="Item.html"><div class="navbar n3">Items</div></a>
+                <a href="Charms.html"><div class="navbar n4">Charms</div></a>
+            </div>
+            <div class="nav-right" id="nav-right"></div>
+        </nav>
+
+        <canvas
+            id="hk-canvas"
+            style="
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: 0;
+            "
+        ></canvas>
+
+        <script src="hk-particles.js"></script>
+
+        <div class="page active" id="page-home">
+            <div class="hero-title">
+                <img
+                    src="hollow-knight-title-screen-backgrounds-v0-nmp5drgyfmb61.png"
+                    alt="Hollow Knight Title"
+                    class="title-img"
+                />
+            </div>
+
+            <div class="lore-brief">
+                <h2 class="section-heading">
+                    The Fallen Kingdom of Hallownest
+                </h2>
+                <p>
+                    Deep beneath a forgotten town lies a vast, ruined kingdom —
+                    <strong>Hallownest</strong>. Once a thriving civilisation
+                    built by the enigmatic <strong>Pale King</strong>, it now
+                    lies silent, its citizens lost to a spreading infection born
+                    from a dreaming god called <strong>The Radiance</strong>.
+                    You are the <strong>Knight</strong> — a small, nameless
+                    vessel of Void — descending alone into the darkness to
+                    uncover the truth of what was sacrificed to hold this world
+                    together.
+                </p>
+                <p>
+                    What makes Hollow Knight singular is its
+                    <em>hand-crafted silence</em>: 17 interconnected regions,
+                    thousands of hand-drawn frames, a haunting orchestral score,
+                    and a lore told entirely through item descriptions, faded
+                    murals, and the dying words of forgotten bugs. Nothing is
+                    explained. Everything is felt.
+                </p>
+            </div>
+
+            <div class="map-section">
+                <h2 class="section-heading">Map of Hallownest</h2>
+                <div class="map-wrapper">
+                    <img
+                        src="Lore/imgh3.jpg"
+                        alt="Map of Hallownest"
+                        class="map-img"
+                    />
+                    <div class="map-overlay">
+                        <span>Hover to explore</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="arrow-section">
+                <p class="arrow-label">The Story Behind the Game</p>
+                <button class="arrow-btn" onclick="showPage('page-teamcherry')">
+                    <span class="arrow-icon">&#8595;</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="page" id="page-teamcherry">
+            <div class="back-btn-wrap">
+                <button class="back-btn" onclick="showPage('page-home')">
+                    &#8593; Back
+                </button>
+            </div>
+
+            <div class="tc-content">
+                <div class="tc-header">
+                    <img
+                        src="download.png"
+                        alt="Team Cherry Logo"
+                        class="tc-logo"
+                    />
+                    <h2 class="tc-title">How Team Cherry Made Hollow Knight</h2>
+                </div>
+
+                <div class="tc-story">
+                    <div class="story-card">
+                        <div class="story-num">01</div>
+                        <div class="story-text">
+                            <h3>Three People. One Dream.</h3>
+                            <p>
+                                Hollow Knight was created by
+                                <strong>Team Cherry</strong> — a tiny studio of
+                                just three people based in Adelaide, Australia:
+                                <strong>Ari Gibson</strong> (art & direction),
+                                <strong>William Pellen</strong> (programming &
+                                design), and
+                                <strong>David Kazi</strong> (business). It began
+                                as a small prototype for a 2014 game jam.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="story-card">
+                        <div class="story-num">02</div>
+                        <div class="story-text">
+                            <h3>Kickstarter & The Community</h3>
+                            <p>
+                                In 2014, Team Cherry launched a
+                                <strong>Kickstarter campaign</strong> with a
+                                modest goal of $35,000 AUD. The community
+                                responded overwhelmingly — they raised over
+                                <strong>$57,000</strong>. That faith from
+                                backers gave them the runway to build something
+                                far larger than originally planned.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="story-card">
+                        <div class="story-num">03</div>
+                        <div class="story-text">
+                            <h3>Two and a Half Years of Craft</h3>
+                            <p>
+                                Development stretched from 2014 to early 2017.
+                                Every frame of animation was hand-drawn. Every
+                                room was built by hand. The composer
+                                <strong>Christopher Larkin</strong> wrote a full
+                                orchestral score alone. The team worked with
+                                extraordinary discipline to build one of the
+                                largest indie games of its era.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="story-card">
+                        <div class="story-num">04</div>
+                        <div class="story-text">
+                            <h3>Launch & Legacy</h3>
+                            <p>
+                                Hollow Knight released on
+                                <strong>February 24, 2017</strong> for PC. It
+                                sold over <strong>2.8 million copies</strong> in
+                                its first two years with zero marketing —
+                                entirely by word of mouth. It is now considered
+                                one of the greatest indie games ever made, and
+                                its sequel <em>Silksong</em> is one of the most
+                                anticipated games in the industry.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="thank-you">
+                    <div class="divider"></div>
+                    <p class="thank-text">
+                        Thank you, <strong>Team Cherry</strong> — for proving
+                        that three people, a dream, and an obsessive love of
+                        craft can create something that millions of people will
+                        carry with them forever.
+                    </p>
+                    <img
+                        src="download.png"
+                        alt="Team Cherry"
+                        class="tc-logo-sm"
+                    />
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-overlay" id="modal-overlay">
+            <div class="modal" id="modal">
+                <button class="modal-close" id="modal-close">&#x2715;</button>
+                <div class="modal-panel" id="panel-login">
+                    <div class="modal-icon">&#9670;</div>
+                    <h2 class="modal-title">Welcome Back</h2>
+                    <p class="modal-sub">Sign in to your Hallownest account</p>
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input
+                            type="text"
+                            id="login-username"
+                            placeholder="Enter your username"
+                            autocomplete="off"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input
+                            type="password"
+                            id="login-password"
+                            placeholder="Enter your password"
+                        />
+                    </div>
+                    <div class="form-error" id="login-error"></div>
+                    <button class="btn-primary" id="btn-login">Sign In</button>
+                    <p class="modal-switch">
+                        No account?
+                        <span class="switch-link" id="go-register"
+                            >Create one</span
+                        >
+                    </p>
+                </div>
+                <div class="modal-panel hidden" id="panel-register">
+                    <div class="modal-icon">&#9670;</div>
+                    <h2 class="modal-title">Join Hallownest</h2>
+                    <p class="modal-sub">Create your account</p>
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input
+                            type="text"
+                            id="reg-username"
+                            placeholder="Choose a username"
+                            autocomplete="off"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input
+                            type="email"
+                            id="reg-email"
+                            placeholder="Your email address"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input
+                            type="password"
+                            id="reg-password"
+                            placeholder="Create a password"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label>Confirm Password</label>
+                        <input
+                            type="password"
+                            id="reg-confirm"
+                            placeholder="Repeat your password"
+                        />
+                    </div>
+                    <div class="form-error" id="reg-error"></div>
+                    <div class="form-success" id="reg-success"></div>
+                    <button class="btn-primary" id="btn-register">
+                        Create Account
+                    </button>
+                    <p class="modal-switch">
+                        Already have one?
+                        <span class="switch-link" id="go-login">Sign in</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <script src="home.js"></script>
+        <script src="Login.js"></script>
+    </body>
+</html>

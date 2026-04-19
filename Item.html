@@ -1,0 +1,1082 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Hollow Knight — Items &amp; Weapons</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="Item.css" />
+        <link rel="stylesheet" href="login.css" />
+    </head>
+    <body>
+        <canvas id="hk-canvas"></canvas>
+
+        <header>
+            <nav>
+                <div class="nav-left">
+                    <a href="Index.html"><div class="navbar n1">Home</div></a>
+                    <a href="Lore.html"><div class="navbar n2">Lore</div></a>
+                    <a href="Item.html"
+                        ><div class="navbar n3 active">Items</div></a
+                    >
+                    <a href="Charms.html"
+                        ><div class="navbar n4">Charms</div></a
+                    >
+                </div>
+                <div class="nav-right" id="nav-right"></div>
+            </nav>
+        </header>
+
+        <div class="page">
+
+            <div class="page-title-wrap">
+                <h1 class="page-title">Items &amp; Weapons of Hallownest</h1>
+                <p class="page-subtitle">
+                    Relics, Tools &amp; Instruments of the Void
+                </p>
+            </div>
+
+            <div class="tabs-wrap">
+                <button class="tab-btn active" data-filter="all">All</button>
+                <button class="tab-btn" data-filter="weapon">Weapons</button>
+                <button class="tab-btn" data-filter="key">Key Items</button>
+                <button class="tab-btn" data-filter="upgrade">Upgrades</button>
+                <button class="tab-btn" data-filter="relic">Relics</button>
+                <button class="tab-btn" data-filter="consumable">
+                    Consumables
+                </button>
+            </div>
+
+            
+            <div class="section-divider" data-category="weapon">
+                <div class="divider-line"></div>
+                <div class="divider-title">Weapons &amp; Nail Arts</div>
+                <div class="divider-line"></div>
+            </div>
+
+            <div
+                class="weapon-card"
+                data-category="weapon"
+                style="--rarity-color: #c0d8ff; --tag-color: #8ab0f0"
+            >
+                <div class="weapon-inner" style="--rarity-color: #c0d8ff">
+                    <div class="weapon-img-wrap">
+                        <img
+                            style="height: 120px"
+                            src="Items/purenaim.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="weapon-body">
+                        <div class="weapon-num">01</div>
+                        <div class="weapon-tag" style="color: #8ab0f0">
+                            Primary Weapon · Nail
+                        </div>
+                        <div class="weapon-name">The Pure Nail</div>
+                        <p class="weapon-desc">
+                            The Knight's primary instrument of war — a slender,
+                            ancient nail forged from the metals of Hallownest.
+                            Beginning as a <strong>Old Nail</strong>, it can be
+                            upgraded through the master craftsman
+                            <strong>Nailsmith</strong> four times until it
+                            reaches its ultimate form: the <em>Pure Nail</em>,
+                            said to be the sharpest blade ever forged in the
+                            kingdom. Each upgrade demands geo and the rare ore
+                            known as <strong>Pale Ore</strong>.
+                        </p>
+                        <div class="weapon-stats">
+                            <div class="stat-pill">
+                                Base Damage <span>5</span>
+                            </div>
+                            <div class="stat-pill">
+                                Pure Nail Damage <span>21</span>
+                            </div>
+                            <div class="stat-pill">Upgrades <span>4</span></div>
+                            <div class="stat-pill">
+                                Pale Ore Required <span>6</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="weapon-card"
+                data-category="weapon"
+                style="--tag-color: #9080d0"
+            >
+                <div class="weapon-inner" style="--rarity-color: #7060c0">
+                    <div class="weapon-img-wrap">
+                        <img
+                            style="height: 240px"
+                            src="Items/Shade_Cloak.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="weapon-body">
+                        <div class="weapon-num">02</div>
+                        <div class="weapon-tag" style="color: #9080d0">
+                            Ability · Void Power
+                        </div>
+                        <div class="weapon-name">Shade Cloak</div>
+                        <p class="weapon-desc">
+                            An upgrade to the <strong>Mothwing Cloak</strong>,
+                            granted by the Void itself in the <em>Abyss</em>.
+                            The Knight is briefly cloaked in shadow, becoming
+                            <strong>invincible</strong>
+                            during the dash. It can phase through enemies,
+                            beams, and hazards entirely — a manifestation of
+                            pure Void that sets the Knight apart from any other
+                            vessel.
+                        </p>
+                        <div class="weapon-stats">
+                            <div class="stat-pill">Type <span>Dash</span></div>
+                            <div class="stat-pill">
+                                I-frames <span>Yes</span>
+                            </div>
+                            <div class="stat-pill">
+                                Shadow Dash <span>Infinite</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-divider" data-category="weapon">
+                <div class="divider-line"></div>
+                <div class="divider-title">Nail Arts</div>
+                <div class="divider-line"></div>
+            </div>
+
+            <div class="items-grid" data-group="weapon">
+                <div
+                    class="item-card"
+                    data-category="weapon"
+                    style="--rarity-color: #80a8f0; --tag-color: #7090c8"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="height: 200px"
+                            src="Items/Great_Slash.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-tag">Nail Art</div>
+                        <div class="card-name">Great Slash</div>
+                        <p class="card-desc">
+                            A powerful downward slash taught by the
+                            <strong>Nailmaster Sheo</strong>. Deals
+                            <strong>2.5× nail damage</strong> in a wide arc. One
+                            of the highest damage Nail Arts, ideal for crowd
+                            control.
+                        </p>
+                        <div class="card-stats">
+                            <div class="stat-pill">
+                                Multiplier <span>2.5×</span>
+                            </div>
+                            <div class="stat-pill">
+                                Source <span>Nailmaster Sheo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="item-card"
+                    data-category="weapon"
+                    style="--rarity-color: #80a8f0; --tag-color: #7090c8"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 380px"
+                            src="Items/Dash_Slash.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-tag">Nail Art</div>
+                        <div class="card-name">Dash Slash</div>
+                        <p class="card-desc">
+                            A horizontal lunge strike taught by
+                            <strong>Nailmaster Oro</strong>. After dashing, the
+                            Knight delivers a long-range forward slash covering
+                            great distance. Costs a small amount of Geo to
+                            learn.
+                        </p>
+                        <div class="card-stats">
+                            <div class="stat-pill">
+                                Multiplier <span>2.5×</span>
+                            </div>
+                            <div class="stat-pill">
+                                Source <span>Nailmaster Oro</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cyclone Slash -->
+                <div
+                    class="item-card"
+                    data-category="weapon"
+                    style="--rarity-color: #80a8f0; --tag-color: #7090c8"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 320px"
+                            src="Items/Cyclone_Slash.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-tag">Nail Art</div>
+                        <div class="card-name">Cyclone Slash</div>
+                        <p class="card-desc">
+                            A spinning multi-hit technique taught by
+                            <strong>Nailmaster Mato</strong>. Hits up to 6
+                            times, dealing total damage far exceeding other
+                            arts. Exceptional for large or stationary targets.
+                        </p>
+                        <div class="card-stats">
+                            <div class="stat-pill">
+                                Hits <span>up to 6</span>
+                            </div>
+                            <div class="stat-pill">
+                                Source <span>Nailmaster Mato</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spells -->
+            <div class="section-divider" data-category="weapon">
+                <div class="divider-line"></div>
+                <div class="divider-title">Spells &amp; Soul Magic</div>
+                <div class="divider-line"></div>
+            </div>
+
+            <div class="items-grid" data-group="weapon">
+                <!-- Vengeful Spirit -->
+                <div
+                    class="item-card"
+                    data-category="weapon"
+                    style="--rarity-color: #e0d060; --tag-color: #c0a840"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 320px"
+                            src="Items/perfect_vengeful_spirit.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-tag" style="color: #c0a840">
+                            Spell · Soul Magic
+                        </div>
+                        <div class="card-name">Vengeful Spirit</div>
+                        <p class="card-desc">
+                            The first spell obtained, found in
+                            <em>Forgotten Crossroads</em>. Projects a
+                            <strong>spirit</strong> forward that damages all
+                            enemies in its path. Upgrades to
+                            <strong>Shade Soul</strong> in the City of Tears.
+                        </p>
+                        <div class="card-stats">
+                            <div class="stat-pill">
+                                Soul Cost <span>33</span>
+                            </div>
+                            <div class="stat-pill">
+                                Upgrade <span>Shade Soul</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desolate Dive -->
+                <div
+                    class="item-card"
+                    data-category="weapon"
+                    style="--rarity-color: #e0d060; --tag-color: #c0a840"
+                >
+                    <div class="card-img-wrap">
+                        <img src="Items/Desolate_Dive.png" class="images" />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-tag" style="color: #c0a840">
+                            Spell · Soul Magic
+                        </div>
+                        <div class="card-name">Desolate Dive</div>
+                        <p class="card-desc">
+                            A downward plunging spell that
+                            <strong>cracks the ground</strong>, damaging nearby
+                            enemies. Found in the <em>Soul Sanctum</em>.
+                            Upgrades to <strong>Descending Dark</strong> — a far
+                            more devastating version.
+                        </p>
+                        <div class="card-stats">
+                            <div class="stat-pill">
+                                Soul Cost <span>33</span>
+                            </div>
+                            <div class="stat-pill">
+                                Upgrade <span>Descending Dark</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Howling Wraiths -->
+                <div
+                    class="item-card"
+                    data-category="weapon"
+                    style="--rarity-color: #e0d060; --tag-color: #c0a840"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 260px"
+                            src="Items/Howling_Wraiths.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-tag" style="color: #c0a840">
+                            Spell · Soul Magic
+                        </div>
+                        <div class="card-name">Howling Wraiths</div>
+                        <p class="card-desc">
+                            An upward burst of howling spirits found in
+                            <em>Fog Canyon</em>. Releases a column of wraiths
+                            above the Knight. Upgrades to
+                            <strong>Abyss Shriek</strong>, one of the most
+                            powerful spells in the game.
+                        </p>
+                        <div class="card-stats">
+                            <div class="stat-pill">
+                                Soul Cost <span>33</span>
+                            </div>
+                            <div class="stat-pill">
+                                Upgrade <span>Abyss Shriek</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lore callout -->
+            <div class="lore-callout" data-category="weapon">
+                <div class="lore-callout-inner">
+                    <strong
+                        >"The nail and the soul — the two instruments of every
+                        vessel."</strong
+                    >
+                    Soul is gathered by striking enemies and stored in a vessel.
+                    It powers both healing and offensive spells. Mastery of both
+                    nail and spell is the mark of a true explorer of Hallownest.
+                </div>
+            </div>
+
+            <!-- ═══════════════════════════════════════ -->
+            <!--  KEY ITEMS                             -->
+            <!-- ═══════════════════════════════════════ -->
+
+            <div class="section-divider" data-category="key">
+                <div class="divider-line"></div>
+                <div class="divider-title">Key Items</div>
+                <div class="divider-line"></div>
+            </div>
+
+            <div class="items-grid" data-group="key">
+                <!-- Mantis Claw -->
+                <div
+                    class="item-card"
+                    data-category="key"
+                    style="--rarity-color: #60d0a0; --tag-color: #40b080"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 200px"
+                            src="Items/Skill_Mantis_Claw.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-tag" style="color: #40b080">
+                            Movement Ability
+                        </div>
+                        <div class="card-name">Mantis Claw</div>
+                        <p class="card-desc">
+                            A claw salvaged from the
+                            <strong>Mantis Tribe</strong>, granting the ability
+                            to <em>cling to walls</em> and wall-jump. Found deep
+                            within the Mantis Village. One of the most
+                            transformative movement upgrades.
+                        </p>
+                        <div class="card-stats">
+                            <div class="stat-pill">
+                                Type <span>Movement</span>
+                            </div>
+                            <div class="stat-pill">
+                                Location <span>Mantis Village</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Monarch Wings -->
+                <div
+                    class="item-card"
+                    data-category="key"
+                    style="--rarity-color: #60d0a0; --tag-color: #40b080"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 200px"
+                            src="Items/perfect_Monarch_Wings.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-tag" style="color: #40b080">
+                            Movement Ability
+                        </div>
+                        <div class="card-name">Monarch Wings</div>
+                        <p class="card-desc">
+                            Ancient wings that grant a
+                            <strong>double jump</strong>. Hidden in the
+                            <em>Ancient Basin</em>. The wings are remnants of a
+                            long-dead monarch whose name has been lost to
+                            Hallownest's silence.
+                        </p>
+                        <div class="card-stats">
+                            <div class="stat-pill">
+                                Type <span>Double Jump</span>
+                            </div>
+                            <div class="stat-pill">
+                                Location <span>Ancient Basin</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Crystal Heart -->
+                <div
+                    class="item-card"
+                    data-category="key"
+                    style="--rarity-color: #60d0a0; --tag-color: #40b080"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            src="Items/perfect_crystal_heart.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-tag" style="color: #40b080">
+                            Movement Ability
+                        </div>
+                        <div class="card-name">Crystal Heart</div>
+                        <p class="card-desc">
+                            Mined from the <strong>Crystal Peak</strong>, this
+                            crystallised heart grants a <em>super dash</em> —
+                            propelling the Knight horizontally at tremendous
+                            speed until hitting a wall or ceiling. Essential for
+                            secret areas.
+                        </p>
+                        <div class="card-stats">
+                            <div class="stat-pill">
+                                Type <span>Super Dash</span>
+                            </div>
+                            <div class="stat-pill">
+                                Location <span>Crystal Peak</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- City Crest -->
+                <div
+                    class="item-card"
+                    data-category="key"
+                    style="--rarity-color: #d070d0; --tag-color: #b050b0"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 180px"
+                            src="Items/City_Crest.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-tag" style="color: #b050b0">
+                            Key Item · Access
+                        </div>
+                        <div class="card-name">City Crest</div>
+                        <p class="card-desc">
+                            A seal bearing the crest of the
+                            <strong>City of Tears</strong>. Dropped by the
+                            <em>Gorgeous Husk</em> in Forgotten Crossroads.
+                            Inserts into a gate mechanism to open the passage
+                            into the city proper.
+                        </p>
+                        <div class="card-stats">
+                            <div class="stat-pill">
+                                Use <span>Gate Access</span>
+                            </div>
+                            <div class="stat-pill">
+                                Obtained from <span>Gorgeous Husk</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tram Pass -->
+                <div
+                    class="item-card"
+                    data-category="key"
+                    style="--rarity-color: #d070d0; --tag-color: #b050b0"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 200px"
+                            src="Items/Tram_Pass.jpg"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-tag" style="color: #b050b0">
+                            Key Item · Travel
+                        </div>
+                        <div class="card-name">Tram Pass</div>
+                        <p class="card-desc">
+                            A rusted pass that activates Hallownest's ancient
+                            <strong>tram system</strong>, connecting the
+                            <em>Forgotten Crossroads</em>, <em>Deepnest</em>,
+                            and the <em>Ancient Basin</em>. Found in the Failed
+                            Tramway.
+                        </p>
+                        <div class="card-stats">
+                            <div class="stat-pill">
+                                Use <span>Tram Travel</span>
+                            </div>
+                            <div class="stat-pill">Areas <span>3</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══════════════════════════════════════ -->
+            <!--  UPGRADES                              -->
+            <!-- ═══════════════════════════════════════ -->
+
+            <div class="section-divider" data-category="upgrade">
+                <div class="divider-line"></div>
+                <div class="divider-title">Vessel &amp; Soul Upgrades</div>
+                <div class="divider-line"></div>
+            </div>
+
+            <div class="items-grid" data-group="upgrade">
+                <!-- Mask Shard -->
+                <div
+                    class="item-card"
+                    data-category="upgrade"
+                    style="--rarity-color: #f07050; --tag-color: #d05030"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 170px"
+                            src="Items/Health_Piece.jpg"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-tag" style="color: #d05030">
+                            Upgrade · Health
+                        </div>
+                        <div class="card-name">Mask Shard</div>
+                        <p class="card-desc">
+                            Fragments of ancient masks scattered throughout
+                            Hallownest. Every
+                            <strong>four shards</strong> combine to create one
+                            complete Mask, permanently increasing the Knight's
+                            maximum <em>health</em> by one.
+                        </p>
+                        <div class="card-stats">
+                            <div class="stat-pill">
+                                Per Upgrade <span>4 shards</span>
+                            </div>
+                            <div class="stat-pill">
+                                Max Masks <span>9 + 5 bonus</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vessel Fragment -->
+                <div
+                    class="item-card"
+                    data-category="upgrade"
+                    style="--rarity-color: #f07050; --tag-color: #d05030"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            src="Items/Early_Vessel_Fragment.jpg"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-tag" style="color: #d05030">
+                            Upgrade · Soul
+                        </div>
+                        <div class="card-name">Vessel Fragment</div>
+                        <p class="card-desc">
+                            Shards of Soul Vessels, the containers used by
+                            Hallownest to store <strong>Soul</strong>. Three
+                            fragments complete one vessel, permanently
+                            increasing the Knight's maximum Soul capacity.
+                        </p>
+                        <div class="card-stats">
+                            <div class="stat-pill">
+                                Per Upgrade <span>3 fragments</span>
+                            </div>
+                            <div class="stat-pill">
+                                Max Vessels <span>3 total</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pale Ore -->
+                <div
+                    class="item-card"
+                    data-category="upgrade"
+                    style="--rarity-color: #f07050; --tag-color: #d05030"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 180px"
+                            src="Items/perfect_pale_ore.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-tag" style="color: #d05030">
+                            Upgrade · Nail
+                        </div>
+                        <div class="card-name">Pale Ore</div>
+                        <p class="card-desc">
+                            A rare ore suffused with the power of the
+                            <strong>Pale King</strong>. The Nailsmith requires
+                            it for the highest tiers of nail upgrades. Only
+                            <strong>6 pieces</strong> exist in all of
+                            Hallownest.
+                        </p>
+                        <div class="card-stats">
+                            <div class="stat-pill">
+                                Total Found <span>6</span>
+                            </div>
+                            <div class="stat-pill">
+                                Use <span>Nail Upgrade</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══════════════════════════════════════ -->
+            <!--  RELICS                                -->
+            <!-- ═══════════════════════════════════════ -->
+
+            <div class="section-divider" data-category="relic">
+                <div class="divider-line"></div>
+                <div class="divider-title">Relics of the Fallen Kingdom</div>
+                <div class="divider-line"></div>
+            </div>
+
+            <div class="items-grid" data-group="relic">
+                <!-- Wanderer's Journal -->
+                <div
+                    class="item-card"
+                    data-category="relic"
+                    style="--rarity-color: #a08060; --tag-color: #806040"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 140px"
+                            src="Items/perfect_wanderers.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-tag" style="color: #806040">
+                            Relic · Lore Item
+                        </div>
+                        <div class="card-name">Wanderer's Journal</div>
+                        <p class="card-desc">
+                            The journal of a traveller who explored Hallownest
+                            long before the infection spread. Sold to
+                            <strong>Relic Seeker Lemm</strong> for
+                            <em>200 Geo</em> each. A record of observations from
+                            a lost age.
+                        </p>
+                        <div class="card-stats">
+                            <div class="stat-pill">
+                                Sell Value <span>200 Geo</span>
+                            </div>
+                            <div class="stat-pill">Buyer <span>Lemm</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hallownest Seal -->
+                <div
+                    class="item-card"
+                    data-category="relic"
+                    style="--rarity-color: #a08060; --tag-color: #806040"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 140px"
+                            src="Items/perfect_hallownest.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-tag" style="color: #806040">
+                            Relic · Lore Item
+                        </div>
+                        <div class="card-name">Hallownest Seal</div>
+                        <p class="card-desc">
+                            Official seals bearing the insignia of
+                            <strong>Hallownest</strong>. Once used to
+                            authenticate royal decrees. Now treasured as
+                            historical artefacts. Fetches <em>450 Geo</em> from
+                            Lemm.
+                        </p>
+                        <div class="card-stats">
+                            <div class="stat-pill">
+                                Sell Value <span>450 Geo</span>
+                            </div>
+                            <div class="stat-pill">Buyer <span>Lemm</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- King's Idol -->
+                <div
+                    class="item-card"
+                    data-category="relic"
+                    style="--rarity-color: #a08060; --tag-color: #806040"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 100px"
+                            src="Items/Kings_Idol.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-tag" style="color: #806040">
+                            Relic · Lore Item
+                        </div>
+                        <div class="card-name">King's Idol</div>
+                        <p class="card-desc">
+                            A small idol carved in the likeness of the
+                            <strong>Pale King</strong>. Erected throughout
+                            Hallownest as a symbol of devotion. Each idol is
+                            worth <em>800 Geo</em> to Lemm — the most valuable
+                            common relic.
+                        </p>
+                        <div class="card-stats">
+                            <div class="stat-pill">
+                                Sell Value <span>800 Geo</span>
+                            </div>
+                            <div class="stat-pill">Buyer <span>Lemm</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Arcane Egg -->
+                <div
+                    class="item-card"
+                    data-category="relic"
+                    style="--rarity-color: #a08060; --tag-color: #806040"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 140px"
+                            src="Items/Arcane_Egg.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-tag" style="color: #806040">
+                            Relic · Ancient
+                        </div>
+                        <div class="card-name">Arcane Egg</div>
+                        <p class="card-desc">
+                            An egg of unknown origin from an
+                            <strong>Ancient Civilisation</strong> that predates
+                            Hallownest entirely. Its interior is etched with
+                            indecipherable script. Worth <em>1200 Geo</em> — the
+                            rarest relic in the kingdom.
+                        </p>
+                        <div class="card-stats">
+                            <div class="stat-pill">
+                                Sell Value <span>1200 Geo</span>
+                            </div>
+                            <div class="stat-pill">
+                                Era <span>Pre-Hallownest</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══════════════════════════════════════ -->
+            <!--  CONSUMABLES                           -->
+            <!-- ═══════════════════════════════════════ -->
+
+            <div class="section-divider" data-category="consumable">
+                <div class="divider-line"></div>
+                <div class="divider-title">Consumables &amp; Tools</div>
+                <div class="divider-line"></div>
+            </div>
+
+            <div class="items-grid" data-group="consumable">
+                <!-- Focus / Soul Heal -->
+                <div
+                    class="item-card"
+                    data-category="consumable"
+                    style="--rarity-color: #60c0e0; --tag-color: #40a0c0"
+                >
+                    <div class="card-img-wrap">
+                        <img src="Items/perfect_spell.png" class="images" />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-tag" style="color: #40a0c0">
+                            Soul Mechanic
+                        </div>
+                        <div class="card-name">Soul — Focus</div>
+                        <p class="card-desc">
+                            By concentrating gathered <strong>Soul</strong>, the
+                            Knight can <em>Focus</em> — a brief channelling that
+                            restores one Mask of health. The core survival
+                            mechanic of Hallownest. Requires 33 Soul.
+                        </p>
+                        <div class="card-stats">
+                            <div class="stat-pill">
+                                Soul Cost <span>33</span>
+                            </div>
+                            <div class="stat-pill">
+                                Heals <span>1 Mask</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lumafly Lantern -->
+                <div
+                    class="item-card"
+                    data-category="consumable"
+                    style="--rarity-color: #60c0e0; --tag-color: #40a0c0"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 140px"
+                            src="Items/perfect_Lumerfly.png"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-tag" style="color: #40a0c0">
+                            Tool · Exploration
+                        </div>
+                        <div class="card-name">Lumafly Lantern</div>
+                        <p class="card-desc">
+                            A lantern containing a <strong>Lumafly</strong>, a
+                            glowing creature native to Hallownest. Illuminates
+                            the pitch-black passages of <em>Deepnest</em> and
+                            certain cave systems. Purchased from
+                            <strong>Sly</strong> for 1800 Geo.
+                        </p>
+                        <div class="card-stats">
+                            <div class="stat-pill">
+                                Cost <span>1800 Geo</span>
+                            </div>
+                            <div class="stat-pill">Vendor <span>Sly</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dream Nail -->
+                <div
+                    class="item-card"
+                    data-category="consumable"
+                    style="--rarity-color: #c080f0; --tag-color: #a060d0"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 200px"
+                            src="Items/Dream_nail.jpg"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-tag" style="color: #a060d0">
+                            Dream Weapon · Special
+                        </div>
+                        <div class="card-name">Dream Nail</div>
+                        <p class="card-desc">
+                            A sacred nail of pure
+                            <strong>dream essence</strong>, granted by the
+                            Moth's Seer. Can be swung to
+                            <em>read the thoughts</em> of any being — living,
+                            dead, or inanimate. Also used to enter bosses'
+                            memories and collect Essence.
+                        </p>
+                        <div class="card-stats">
+                            <div class="stat-pill">
+                                Type <span>Dream Weapon</span>
+                            </div>
+                            <div class="stat-pill">
+                                Source <span>Seer (Resting Grounds)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Geo -->
+                <div
+                    class="item-card"
+                    data-category="consumable"
+                    style="--rarity-color: #60c0e0; --tag-color: #40a0c0"
+                >
+                    <div class="card-img-wrap">
+                        <img
+                            style="width: 140px"
+                            src="Items/Geo.jpg"
+                            class="images"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-tag" style="color: #40a0c0">
+                            Currency
+                        </div>
+                        <div class="card-name">Geo</div>
+                        <p class="card-desc">
+                            The currency of Hallownest — small shards of
+                            crystallised shell dropped by enemies. Used to
+                            purchase items, charms, and upgrades from vendors
+                            across the kingdom. Lost on death, but recoverable
+                            from your Shade.
+                        </p>
+                        <div class="card-stats">
+                            <div class="stat-pill">
+                                Lost on <span>Death</span>
+                            </div>
+                            <div class="stat-pill">
+                                Recovered from <span>Shade</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-end"></div>
+        </div>
+
+        <!-- ── LOGIN MODAL ─────────────────────────── -->
+        <div class="modal-overlay" id="modal-overlay">
+            <div class="modal" id="modal">
+                <button class="modal-close" id="modal-close">&#x2715;</button>
+
+                <!-- LOGIN PANEL -->
+                <div class="modal-panel" id="panel-login">
+                    <div class="modal-icon">&#9670;</div>
+                    <h2 class="modal-title">Welcome Back</h2>
+                    <p class="modal-sub">Sign in to your Hallownest account</p>
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input
+                            type="text"
+                            id="login-username"
+                            placeholder="Enter your username"
+                            autocomplete="off"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input
+                            type="password"
+                            id="login-password"
+                            placeholder="Enter your password"
+                        />
+                    </div>
+                    <div class="form-error" id="login-error"></div>
+                    <button class="btn-primary" id="btn-login">Sign In</button>
+                    <p class="modal-switch">
+                        No account?
+                        <span class="switch-link" id="go-register"
+                            >Create one</span
+                        >
+                    </p>
+                </div>
+
+                <!-- REGISTER PANEL -->
+                <div class="modal-panel hidden" id="panel-register">
+                    <div class="modal-icon">&#9670;</div>
+                    <h2 class="modal-title">Join Hallownest</h2>
+                    <p class="modal-sub">Create your account</p>
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input
+                            type="text"
+                            id="reg-username"
+                            placeholder="Choose a username"
+                            autocomplete="off"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input
+                            type="email"
+                            id="reg-email"
+                            placeholder="Your email address"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input
+                            type="password"
+                            id="reg-password"
+                            placeholder="Create a password"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label>Confirm Password</label>
+                        <input
+                            type="password"
+                            id="reg-confirm"
+                            placeholder="Repeat your password"
+                        />
+                    </div>
+                    <div class="form-error" id="reg-error"></div>
+                    <div class="form-success" id="reg-success"></div>
+                    <button class="btn-primary" id="btn-register">
+                        Create Account
+                    </button>
+                    <p class="modal-switch">
+                        Already have one?
+                        <span class="switch-link" id="go-login">Sign in</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <script src="Item.js"></script>
+        <script src="login.js"></script>
+    </body>
+</html>
