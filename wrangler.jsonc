@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "hollow-knight-wiki",
+  "name": "hollow-knight-fanwiki",
   "compatibility_date": "2026-06-01",
   "observability": {
     "enabled": true
